@@ -1,63 +1,63 @@
 // define variables and arrays
 var emptyArray = [];
-var passwordLength;
-var lowercase;
-var lowercaseInclude;
-var lowerLetter;
-var uppercaseInclude;
-var upperLetter;
-var uppercase;
-var special;
-var specialInclude;
-var number;
-var numberInclude;
-var randomNumber;
-var randomSpecial;
+var passwordLength; //stores length of password input by user
+var lowercase; //user inputs value of Y or N to include or not include lowercase letters
+var lowercaseInclude; //boolean value of true or false depending if lowercase letters are included or not
+var lowerLetter; //randomly generated lowercase letter
+var uppercaseInclude; //boolean value of true or false depending if uppercase letters are included or not
+var upperLetter; //randomly generated uppercase letter
+var uppercase; //user inputs value of Y or N to include or not include uppercase letters
+var special; //user inputs value of Y or N to include or not include special characters
+var specialInclude; //boolean value of true or false depending if special characters are included or not
+var number; //user inputs value of Y or N to include or not include numbers
+var numberInclude; //boolean value of true or false depending if numbers are included or not
+var randomNumber; //randomly generated number
+var randomSpecial; //randomly generated special character
+
+// arrays containing characters for randomization
 const lowercaseletters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] ;
 const uppercaseletters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'] ;
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specials = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
-var randomArray = [];
-var doubleRandom = [];
-var passwordArray = [];
+var randomArray = []; //array to store random characters from each character class
+var doubleRandom = []; //array of random character chose from randomArray
+var passwordArray = []; //array to store items to be used in password
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // define functions
 
-function randomItem(arr) {
+function randomItem(arr) { //function to select random item from array
 
     // get random index value
     const randomIndex = Math.floor(Math.random() * arr.length);
-
     // get random item
     const item = arr[randomIndex];
-
     return item;
 }
 
-function lowercaseLetter() {
+function lowercaseLetter() { //function to get random lowercase letter
   lowerLetter = randomItem(lowercaseletters);
   return lowerLetter;
 }
 
-function uppercaseLetter() {
+function uppercaseLetter() { //function to get random uppercase letter
   upperLetter =  randomItem(uppercaseletters);
   return upperLetter;
 }
 
-function randomNumbers() {
+function randomNumbers() { //function to get random number
   randomNumber =  randomItem(numbers);
   return randomNumber;
 }
 
-function randomSpecials() {
+function randomSpecials() { //function to get random special character
   randomSpecial = randomItem(specials);
   return randomSpecial;
 }
 
-function randomizer() {
+function randomizer() { //function to get random character from array of random characters from each charater type
   doubleRandom = randomItem(randomArray);
   return doubleRandom;
 }
@@ -65,9 +65,12 @@ function randomizer() {
 
 function generatePassword() {
   for (let i = 0; i < passwordLength; i++) {
-  if (lowercaseInclude == true) {
+
+    //if statements to include/not include different character types
+
+  if (lowercaseInclude == true) { 
     lowercaseLetter();
-    randomArray.push(lowerLetter);
+    randomArray.push(lowerLetter); //adds character to randomArray
      }else {}
 
   if (uppercaseInclude == true) {
@@ -84,14 +87,14 @@ function generatePassword() {
         randomSpecials();
         randomArray.push(randomSpecial);
            }else {}
-  console.log(randomArray);
+  
   randomizer();
-  randomArray = emptyArray;
-passwordArray.push(doubleRandom);
+  randomArray = emptyArray; //clears randomArray for next loop
+passwordArray.push(doubleRandom); //adds random character to password
 console.log(passwordArray);
 
 }
-var password = passwordArray.join("");
+var password = passwordArray.join(""); //turns array into string to use as password
 return password;
 }
 
@@ -113,8 +116,7 @@ function passwordLengths(){
     alert("Password needs at least 8 characters and no more than 128 characters")
     passwordLengths();
   } else {
-    console.log(passwordLength);
-    // return passwordLength;
+  
   }
 }
 
@@ -169,7 +171,7 @@ function specialIncludes() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", function() {
-  
+
   passwordLengths();
   caseInclude();
   uppercaseIncludes();
