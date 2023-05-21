@@ -1,19 +1,9 @@
-# Password Generator Starter Code
+# Password Generator - Module 3 Challenge
 
-GIVEN I need a new, secure password
+In this challenge I was tasked with creating a password generator in which the user could select the password length and the types of characters that would appear in the password. I utilized if statements, a for loop, prompts, math commands for randomization, arrays, and more to complete the assignment.
 
-WHEN I click the button to generate a password
+I did this assignment 100% on my own but utilized online resources such as
 
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+- herewecode.io
+- w3schools.com
+- mdn web docs
