@@ -8,6 +8,10 @@ I did this assignment 100% on my own but utilized online resources such as
 - w3schools.com
 - mdn web docs
 
+Here is a screenshot of the final product
+
+![alt text](Screenshot.png)
+
 The published site can be found at
 
 https://eqmccullough.github.io/Password-Generator/
