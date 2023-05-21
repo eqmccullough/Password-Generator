@@ -7,3 +7,11 @@ I did this assignment 100% on my own but utilized online resources such as
 - herewecode.io
 - w3schools.com
 - mdn web docs
+
+The published site can be found at
+
+https://eqmccullough.github.io/Password-Generator/
+
+The repository for this project can be found at:
+
+https://github.com/eqmccullough/Password-Generator
